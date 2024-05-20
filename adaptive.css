@@ -1,7 +1,7 @@
 @media (min-width: 1281px) and (max-width: 1920px) {
     body{
         width: 1920px;
-        
+        margin:0;
     }
     .a_container{
         display: flex;
@@ -20,6 +20,9 @@
     }
     .a_container_2 a{
         font-size: 150%;
+    }
+    .Main_container1{
+        width: 1920px;
     }
     .Main_container1_left_div{
         width:47%;
@@ -137,7 +140,7 @@
         width: 50%;
     }
     .Main_container5_right{
-        width: 50%;
+        width: 45%;
     }
     .Main_container5_right img{
         width: 20%;
