@@ -77,3 +77,44 @@ loadTranslations().then(() => {
     document.getElementById('languageButton').textContent = 'English';
   }
 });
+
+
+let arrowleft = document.getElementById("arrow-left");
+let arrowright = document.getElementById("arrow-right");
+let slider = document.querySelector(".Main_container6_rectangles");
+
+let slideWidth;
+let i = 0;
+function updateCountOfItems() {
+  if (window.innerWidth <= 1280) {
+    slideWidth = 5;
+  } 
+}
+
+updateCountOfItems();
+
+arrowright.addEventListener('click',function(){
+
+  if(i < slideWidth -1){
+    i++;
+  }
+  else{
+    i =0;
+  }
+    slider.style.transform = `translateX(-${i*430}px)`;
+    console.log(i);
+}
+
+)
+arrowleft.addEventListener('click',function(){
+
+  if(i > 0){
+    i--;
+  }
+  else{
+    i = slideWidth -1;
+  }
+  slider.style.transform = `translateX(-${i*430}px)`;
+  console.log(i);
+}
+)
