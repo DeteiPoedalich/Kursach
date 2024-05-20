@@ -52,8 +52,93 @@ header{
     text-align: center;
     padding-left:2.5% ;
 }
+.Login{
+    display: none;
+}
+.Login.open{
+    margin-top:2%;
+    width:70%;
+    display:flex;
+    position:fixed;
+    z-index: 99;
+    flex-direction: column;
+    text-align: center  ;
+    text-decoration: none;
+    background-color: #E9672B;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+   height: 800px;
+   transform: translateX(300px);
+   overflow: hidden;
+   font-family: roboto;
+   gap:5%;
+}
+.Login input{
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+}
+.Login button{
+    width:25%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-family: Roboto;
+    font-size: 20px;
+}
+.Register{
+    display: none;
+}
+.register_class{
+    width: 70%;
+}
+.Register input{
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+}
+.Register button{
+    width:25%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-family: Roboto;
+    font-size: 20px;
+}
+.Register.open{
+    margin-top:2%;
+    width:70%;
+    display:flex;
+    position:fixed;
+    z-index: 99;
+    flex-direction: column;
+    text-align: center  ;
+    text-decoration: none;
+    background-color: #E9672B;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+   height: 800px;
+   transform: translateX(300px);
+   overflow: hidden;
+   font-family: roboto;
+   gap:5%;
+}
 .Account_menu{
 display: none;
+}
+
+.close{
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+}
+.close p{
+    margin: 0;
 }
 .Account_menu.open{
     margin-top:2%;
@@ -66,20 +151,23 @@ display: none;
     text-decoration: none;
     background-color: #E9672B;
     border-radius: 20px;
+    justify-content: center;
     align-items: center;
    height: 800px;
    transform: translateX(300px);
    overflow: hidden;
+   font-family: roboto;
+   gap:5%;
 }
-
-.Account_menu.open a{
-    margin-top: 14%;
+.Account_menu.open .Account_menu_text{
     text-decoration: none;
     font-size: 150%;
     color: black;
     background-color: #F3F0EC;
-    padding: 50px 500px 50px 500px;
-    border-radius: 30px;
+    padding: 50px 0 50px 0;
+    width: 80%;
+    border-radius: 50px;
+    cursor: pointer;
 }
 body.dark .header_container_img{
     filter:invert(1);
@@ -96,13 +184,6 @@ body.dark .header_container_img{
     color:black;
     font-family: "Roboto";
     font-size: 100%;
-    font-weight:420;
-}
-.a_container_2 p{
-    text-decoration: none;
-    color:black;
-    font-family: "Roboto";
-    font-size: 150%;
     font-weight:420;
 }
 .a_2{
@@ -441,7 +522,7 @@ body.dark .Main_container4_rectangle{
 }
 .arrows{
     transform: translateY(266px);
-    width: 100%;
+    width: 1920px;
     height: 254.16px;
     position: absolute;
     z-index: 1000;
@@ -452,7 +533,7 @@ body.dark .Main_container4_rectangle{
     filter: opacity(0);
     position: absolute;
     background-color: #225DCA;
-    left: 640px;
+    left: 50%;
 }
 .arrow-left{
     width: 50%;
@@ -460,7 +541,7 @@ body.dark .Main_container4_rectangle{
     filter: opacity(0);
     position: absolute;
     background-color: #225DCA;
-    right: 640px;
+    right: 50%;
 }
 .Main_container6_text{
     font-size: 300%;
@@ -471,7 +552,7 @@ body.dark .Main_container4_rectangle{
     display: flex;
     flex-direction: row;
     width: 198.2%;
-    margin: 0.6% 0 0 7.5%;
+    margin: 0.6% 0 0 0.4%;
     gap:1.27%;
     z-index: 10;
 }

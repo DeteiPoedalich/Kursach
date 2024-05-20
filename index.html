@@ -13,8 +13,51 @@
 <body>
     <div id="transparent" class="transparent"></div>
     <div id="Account_name" class ="Account_menu">
-        <a href="">Login</a>
-        <a href="">Register</a>
+        <div id="close" class="close">
+            <p>X</p>
+        </div>       
+            <p id="LoginButton" class="Account_menu_text">Login</p>
+            <p>or</p>
+            <p id="RegisterButton"  class="Account_menu_text">Register</p>
+    </div>
+    <div id="Login" class="Login">
+        <div id="close1" class="close">
+            <p>X</p>
+        </div>  
+        <div class="register_class"> 
+            <p>Email</p>
+            <input type="email">
+        </div>
+        <div class="register_class">
+            <p>Password</p>
+            <input type="password">
+        </div>
+        <button>Login</button>
+    </div>
+    <div id="Register" class="Register">
+        <div id="close2" class="close">
+            <p>X</p>
+        </div>  
+        <div class="register_class">
+            <p>First Name</p>
+            <input type="First Name">
+        </div>
+        <div class="register_class">
+            <p>Last Name</p>
+            <input type="Last Name">
+        </div>
+        <div class="register_class"> 
+            <p>Email</p>
+            <input type="email">
+        </div>
+        <div class="register_class">
+            <p>Password</p>
+            <input type="password">
+        </div>
+        <button>Register</button>
+    </div>
+    <div>
+
     </div>
     <header>
         <div class="a_container">
@@ -28,7 +71,7 @@
         <div class="a_container_2">
             <a id="Check_Delivery" class="a_2" href="">Check if We Deliver</a>
             <a id="Search" href="">Search</a>
-            <p id="Account">Account</p>
+            <a id="Account" href="">Account</a>
             <button id="languageButton" onclick="toggleLanguage()">English</button>
             <button id="themeButton">Light</button>
         </div>
