@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="StylesBedroom.css">
+    <link rel="stylesheet" href="adaptive.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +24,7 @@
             <a id="Search" href="">Search</a>
             <a id="Account">Account</a>
             <button id="languageButton" onclick="toggleLanguage()">English</button>
-            <button id="themeButton">Light</button>
+            <button id="themeButton" onclick="toggleTheme()">Theme</button>
         </div>
         <div class="header_container_img_cart">
                 <img src="img/cart.png" alt="">
@@ -32,102 +33,102 @@
     </header>
     <main>
         <div class="Site_Name">
-            <p>Bedroom</p>
+            <p id="Bedroom_Text">Bedroom</p>
         </div>
         <div class="AllRectangles">
             <div class="rectangles">
                 <div class="rectangle">
                     <img src="img/bed1.png" alt="">
-                    <p>Marcel Bed, Walnut, Queen
+                    <p id="Bedroom_text1">Marcel Bed, Walnut, Queen
                         $72/mo $1,699 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed2.png" alt="">
-                    <p>Monarch Bed, Queen, Walnut
+                    <p id="Bedroom_text2">Monarch Bed, Queen, Walnut
                         $72/mo $1,699 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed3.png" alt="">
-                    <p>Drommen Acacia Wood Bed, Ivory
+                    <p id="Bedroom_text3">Drommen Acacia Wood Bed, Ivory
                         $47/mo $1,099 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed4.png" alt="">
-                    <p>Ashby Upholstered Bed - King
+                    <p id="Bedroom_text4">Ashby Upholstered Bed - King
                         $75/mo $1,774 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed5.png" alt="">
-                    <p>Avalon Bed, Walnut, King
+                    <p id="Bedroom_text5">Avalon Bed, Walnut, King
                         $68/mo $1,599 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed6.png" alt="">
-                    <p>Aveline King Mattress (8")
+                    <p id="Bedroom_text6">Aveline King Mattress (8")
                         $80/mo $949 to buy</p>
                 </div>
             </div>
             <div class="rectangles">             
                 <div class="rectangle">
                     <img src="img/bed7.png" alt="">
-                    <p>Brielle Upholstered Bed, Queen
+                    <p id="Bedroom_text7">Brielle Upholstered Bed, Queen
                         $63/mo $1,499 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/drawer1.png" alt="">
-                    <p>Chelsea Chest, Walnut
+                    <p id="Bedroom_text8">Chelsea Chest, Walnut
                         $55/mo $1,299 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/drawer2.png" alt="">
-                    <p>Chelsea Nightstand, Natural
+                    <p id="Bedroom_text9">Chelsea Nightstand, Natural
                         $17/mo $399 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed8.png" alt="">
-                    <p>Cheney Bed, Acorn, Full
+                    <p id="Bedroom_text10">Cheney Bed, Acorn, Full
                         $40/mo $949 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/drawer3.png" alt="">
-                    <p>Cheney Chest, Large Acorn
+                    <p id="Bedroom_text11">Cheney Chest, Large Acorn
                         $51/mo $1,199 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/drawer4.png" alt="">
-                    <p>Cheney Chest, Large, Two-Tone
+                    <p id="Bedroom_text12">Cheney Chest, Large, Two-Tone
                         $51/mo $1,199 to buy</p>
                 </div>
             </div>
             <div class="rectangles">
                 <div class="rectangle">
                     <img src="img/drawer5.png" alt="">
-                    <p>Cheney Dresser, Two-Tone
+                    <p id="Bedroom_text13">Cheney Dresser, Two-Tone
                         $55/mo $1,299 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/drawer6.png" alt="">
-                    <p>Cheney Nightstand, Black
+                    <p id="Bedroom_text14">Cheney Nightstand, Black
                         $17/mo $399 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/table6.png" alt="">
-                    <p>Mill C Table
+                    <p id="Bedroom_text15">Mill C Table
                         $6/mo $130 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed9.png" alt="">
-                    <p>Chloe Platform Bed, Full
+                    <p id="Bedroom_text16">Chloe Platform Bed, Full
                         $55/mo $1,299 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed10.png" alt="">
-                    <p>Delancey Bed - Full, Black
+                    <p id="Bedroom_text17">Delancey Bed - Full, Black
                         $20/mo $454 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/bed11.png" alt="">
-                    <p>Delancey Bed Frame - Full, White
+                    <p id="Bedroom_text18">Delancey Bed Frame - Full, White
                         $16/mo $359 to buy</p>
                 </div>
             </div>        
@@ -191,5 +192,5 @@
         </div>
     </footer>
 </body>
-<script src="script.js"></script>
+<script src="bedroomscript.js"></script>
 </html>

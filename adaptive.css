@@ -2,6 +2,7 @@
     body{
         width: 1920px;
         margin:0;
+        overflow-x:hidden;
     }
     .a_container{
         display: flex;
@@ -217,6 +218,7 @@
 @media (max-width: 768px) {
     body{
         width: 768px;
+        overflow-x:hidden;
     }
     .a_container{
         display: none;
@@ -979,7 +981,7 @@
         flex-direction: row;
         gap: 4.1%;
         margin-top:6.2% ;
-        width: 100%;
+        width: 80%;
     }
     .NEWSLETTER{
         margin-top:14% ;
@@ -992,7 +994,7 @@
         width: 75.5%;
     }
     .window{
-        margin: 41.8% 0 0 115.5%;
-        padding-bottom: 20%;
+        margin: 25% 25% 0 0;
+        padding-bottom: 0
     }
 }

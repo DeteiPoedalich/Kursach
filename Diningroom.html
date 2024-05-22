@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesliving.css">
+    <link rel="stylesheet" href="adaptive.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +24,7 @@
             <a id="Search" href="">Search</a>
             <a id="Account">Account</a>
             <button id="languageButton" onclick="toggleLanguage()">English</button>
-            <button id="themeButton">Light</button>
+            <button id="themeButton" onclick="toggleTheme()">Theme</button>
         </div>
         <div class="header_container_img_cart">
                 <img src="img/cart.png" alt="">
@@ -32,97 +33,97 @@
     </header>
     <main>
         <div class="Site_Name">
-            <p>Dining Room</p>
+            <p id="Dining_Text">Dining Room</p>
         </div>
         <div class="AllRectangles">
             <div class="rectangles">
                 <div class="rectangle">
                     <img src="img/stul7.png" alt="">
-                    <p>Shawna Dining Chair
+                    <p id="Dining_Text1">Shawna Dining Chair
                         $26/mo $599 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul8.png" alt="">
-                    <p>Hudson Dining Chair, Gray
+                    <p id="Dining_Text2">Hudson Dining Chair, Gray
                         $26/mo $599 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul9.png" alt="">
-                    <p>Hudson Dining Chair, Black
+                    <p id="Dining_Text3">Hudson Dining Chair, Black
                         $26/mo $599 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul10.png" alt="">
-                    <p>Lyla Dining Chair, Green
+                    <p id="Dining_Text4">Lyla Dining Chair, Green
                         $21/mo $499 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul11.png" alt="">
-                    <p>Lyla Dining Chair, Black
+                    <p id="Dining_Text5">Lyla Dining Chair, Black
                         $21/mo $499 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul12.png" alt="">
-                    <p>Alden Bar/Counter Stool - 24"
+                    <p id="Dining_Text6">Alden Bar/Counter Stool - 24"
                         $9/mo $199 to buy</p>
                 </div>
             </div>
             <div class="rectangles">             
                 <div class="rectangle">
                     <img src="img/stul13.png" alt="">
-                    <p>Alexandra Dining Chair
+                    <p id="Dining_Text7">Alexandra Dining Chair
                         $17/mo $399 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul14.png" alt="">
-                    <p>Andean Chair - Dark Grey
+                    <p id="Dining_Text8">Andean Chair - Dark Grey
                         $13/mo $309 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/drawer7.png" alt="">
-                    <p>Andrea Sideboard
+                    <p id="Dining_Text9">Andrea Sideboard
                         $21/mo $499 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/table9.png" alt="">
-                    <p>Angela Dining Table, Oak
+                    <p id="Dining_Text10">Angela Dining Table, Oak
                         $76/mo $1,799 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul15.png" alt="">
-                    <p>Aragon Chair, Stone Grey
+                    <p id="Dining_Text11">Aragon Chair, Stone Grey
                         $15/mo $340 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/table10.png" alt="">
-                    <p>Aragon Chair, Stone Grey
+                    <p id="Dining_Text12">Aragon Chair, Stone Grey
                         $15/mo $340 to buy</p>
                 </div>
             </div>
             <div class="rectangles">
                 <div class="rectangle">
                     <img src="img/stul16.png" alt="">
-                    <p>Athene Chair - White
+                    <p id="Dining_Text13">Athene Chair - White
                         $7/mo $144 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/stul17.png" alt="">
-                    <p>Aubrey Dining Chair, Wheat
+                    <p id="Dining_Text14">Aubrey Dining Chair, Wheat
                         $17/mo $399 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/table11.png" alt="">
-                    <p>Aubrey Dining Table, Amber
+                    <p id="Dining_Text15">Aubrey Dining Table, Amber
                         $51/mo $1,199 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/table12.png" alt="">
-                    <p>Aubrey Dining Table, Black
+                    <p id="Dining_Text16">Aubrey Dining Table, Black
                         $47/mo $1,099 to buy</p>
                 </div>
                 <div class="rectangle">
                     <img src="img/table13.png" alt="">
-                    <p>Aubrey Dining Table, Wheat
+                    <p id="Dining_Text17">Aubrey Dining Table, Wheat
                         $51/mo $1,199 to buy</p>
                 </div>
             </div>        
@@ -186,5 +187,5 @@
         </div>
     </footer>
 </body>
-<script src="script.js"></script>
+<script src="diningscript.js"></script>
 </html>

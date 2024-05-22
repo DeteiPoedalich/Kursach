@@ -1,9 +1,10 @@
 var themeButton = document.getElementById("themeButton");
   var body = document.body;
-  var Accountmenu=document.getElementById("Account_name");
+  var footer = document.getElementById("footer");
 function toggleTheme() {
   localStorage.setItem('body-theme','light')
 body.classList.toggle("dark");
+
 if (body.classList.contains("dark")) {
   localStorage.setItem('body-theme','dark')
 } else {
@@ -18,48 +19,8 @@ if (localStorage.getItem('body-theme') === 'dark')
     else{
       body.classList.remove("dark");
     }
-var transparent=document.getElementById("transparent");
-var Main_1_button=document.getElementById("Main_1_button");
-Main_1_button.addEventListener("click", function() {
-  transparent.classList.add("open");
-  Accountmenu.classList.add("open");
-});
-
-var closebutton=document.getElementById("close")
-closebutton.addEventListener("click", function() {
-  transparent.classList.remove("open");
-  Accountmenu.classList.remove("open");
-});
-var login=document.getElementById("Login")
-var LoginButton=document.getElementById("LoginButton")
-LoginButton.addEventListener("click", function() {
-  login.classList.add("open");
-  transparent.classList.add("open");
-  Accountmenu.classList.remove("open");
-});
-var closebutton1=document.getElementById("close1")
-closebutton1.addEventListener("click", function() {
-  transparent.classList.remove("open");
-  login.classList.remove("open");
-});
-
-
-var register=document.getElementById("Register")
-var RegisterButton=document.getElementById("RegisterButton")
-RegisterButton.addEventListener("click", function() {
-  register.classList.add("open");
-  transparent.classList.add("open");
-  Accountmenu.classList.remove("open");
-});
-var closebutton2=document.getElementById("close2")
-closebutton2.addEventListener("click", function() {
-  transparent.classList.remove("open");
-  register.classList.remove("open");
-});
-
-
-// Объект с текущими переводами
-var translations = {};
+    
+    var translations = {};
 
 // Загрузка JSON файла с переводами
 function loadTranslations() {
@@ -116,48 +77,3 @@ loadTranslations().then(() => {
     document.getElementById('languageButton').textContent = 'Русский';
   }
 });
-
-
-
-let arrowleft = document.getElementById("arrow-left");
-let arrowright = document.getElementById("arrow-right");
-let slider = document.querySelector(".Main_container6_rectangles");
-
-let slideWidth;
-let i = 0;
-function updateCountOfItems() {
-  if (window.innerWidth <= 1280) {
-    slideWidth = 5;
-  } 
-  else{
-    slideWidth=2;
-  }
-}
-
-updateCountOfItems();
-
-arrowright.addEventListener('click',function(){
-
-  if(i < slideWidth -1){
-    i++;
-  }
-  else{
-    i =0;
-  }
-    slider.style.transform = `translateX(-${i*1927}px)`;
-    console.log(i);
-}
-
-)
-arrowleft.addEventListener('click',function(){
-
-  if(i > 0){
-    i--;
-  }
-  else{
-    i = slideWidth -1;
-  }
-  slider.style.transform = `translateX(-${i*1927}px)`;  
-  console.log(i);
-}
-)

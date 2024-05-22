@@ -100,6 +100,7 @@ header{
 Main{
     display: flex;
     flex-direction: column;
+    align-items: center;   
     gap: 55px;
 }
 .AllRectangles{
@@ -117,6 +118,7 @@ Main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    align-items: center;
     gap:55px;
 }
 .rectangle{
