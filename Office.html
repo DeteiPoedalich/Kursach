@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesliving.css">
-    <link rel="stylesheet" href="adaptive.css">
+    <link rel="stylesheet" href="OfficeAdaptive.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
@@ -16,8 +16,8 @@
             <a id="Why" href="">Why Feather</a>
             <a id="Business" href="">Feather for Business</a>
         </div>
-        <div class="header_container_img">
-            <img onclick="window.location.href='index.html';" src="img/feather.png" alt="">   
+        <div id="feather" class="header_container_img">
+            <img onclick="window.location.href='index.html';" src="img/feather.png" alt="">     
         </div>
         <div class="a_container_2">
             <a id="Check_Delivery" class="a_2" href="">Check if We Deliver</a>
@@ -29,6 +29,25 @@
         <div class="header_container_img_cart">
                 <img src="img/cart.png" alt="">
         </div>
+        <div id="burger" class="burger">
+            <img src="img/burger_part.png" alt="">
+            <img src="img/burger_part.png" alt="">
+            <img src="img/burger_part.png" alt="">
+        </div>
+        <div id="burger_open" class="burger_open">
+            <div id="close3" class="close">
+                <p>X</p>
+            </div>  
+            <a id="Furniture"href="">Furniture</a>
+            <a id="Why" href="">Why Feather</a>
+            <a id="Business" href="">Feather for Business</a>
+            <a id="Check_Delivery" href="">Check if We Deliver</a>
+            <a id="Search" href="">Search</a>
+            <a id="Account" href="">Account</a>
+            <button id="languageButton" onclick="toggleLanguage()">English</button>
+            <button id="themeButton" onclick="toggleTheme()">Theme</button>
+        </div>
+
     </header>
     <main>
         <div class="Site_Name">

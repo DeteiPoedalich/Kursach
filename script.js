@@ -161,3 +161,17 @@ arrowleft.addEventListener('click',function(){
   console.log(i);
 }
 )
+var burger=document.getElementById("burger");
+var burgeropen=document.getElementById("burger_open")
+var feather=document.getElementById("feather")
+burger.addEventListener("click", function() {
+  feather.classList.toggle("whenburger");
+  burger.classList.toggle("open");
+  burgeropen.classList.toggle("open");
+});
+var closebutton3=document.getElementById("close3")
+closebutton3.addEventListener("click", function() {
+  burgeropen.classList.remove("open");
+  feather.classList.toggle("whenburger");
+  burger.classList.toggle("open");
+});

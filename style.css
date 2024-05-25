@@ -5,6 +5,62 @@ body{
     width: 1280px;
     overflow-x: hidden;
 }
+.burger{
+    display: none;
+}
+.burger.open{
+    display: none;
+}
+body.dark .burger{
+    filter: invert(1);
+}
+.burger_open{
+    display: none;
+}
+body.dark .burger_open.open a{
+    color:white;
+}
+.burger_open.open{
+    transform: translateY(85px);
+    display: flex;
+    flex-direction: column;
+    background-color: #E9672B;
+    color: black;
+    font-family: roboto;
+    width:10%;
+    height:200px;
+    text-decoration: none;
+    text-align: center;
+    gap:6px;
+    position: fixed;
+    padding: 20px 0 20px 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+}
+.burger_open.open a{
+    text-decoration: none;
+    color:black;
+}
+.burger_open.open button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color:rgb(17, 17, 17);
+    background-color: white;
+    width: 40%;
+}
+body.dark .burger_open.open button{
+    color:white;
+    width: 40%;
+}
+.header_container_img.whenburger{
+    display: flex;
+    justify-content: center;
+    align-self: center  ;
+    margin-right: 38.9%;
+}
 .transparent{
 display: none;
 }
@@ -27,6 +83,7 @@ body.dark a{
 body.dark p{
     color: #ffffffd3;
 }
+
 header{
     display: flex;
     margin-top:2% ;
