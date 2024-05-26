@@ -138,13 +138,13 @@ header{
     background-color: #E9672B;
 }
 .Login input{
-    width: 100%;
+    width: 30%;
     height: 50px;
     border-radius: 20px;
     border: none;
 }
 .Login button{
-    width:25%;
+    width:10%;
     height: 40px;
     border: none;
     border-radius: 20px;
@@ -157,8 +157,11 @@ header{
 .register_class{
     width: 70%;
 }
+#agreement{
+    width: 10%;
+}
 .Register input{
-    width: 100%;
+    width: 30%;
     height: 50px;
     border-radius: 20px;
     border: none;
@@ -188,7 +191,16 @@ header{
    transform: translateX(300px);
    overflow: hidden;
    font-family: roboto;
-   gap:5%;
+   gap:1%;
+}
+#manualPasswordFields{
+    gap: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#manualPasswordFields input{
+    width:  30%;
 }
 .Account_menu{
 display: none;

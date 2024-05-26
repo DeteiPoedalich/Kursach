@@ -32,32 +32,44 @@
             <p>Password</p>
             <input type="password">
         </div>
-        <button>Login</button>
+        <button style="cursor: pointer;">Login</button>
     </div>
     <div id="Register" class="Register">
-        <div id="close2" class="close">
-            <p>X</p>
-        </div>  
-        <div class="register_class">
-            <p>First Name</p>
-            <input type="First Name">
-        </div>
-        <div class="register_class">
-            <p>Last Name</p>
-            <input type="Last Name">
-        </div>
-        <div class="register_class"> 
-            <p>Email</p>
-            <input type="email">
-        </div>
-        <div class="register_class">
-            <p>Password</p>
-            <input type="password">
-        </div>
-        <button>Register</button>
-    </div>
-    <div>
+        <h2>User Registration</h2>
 
+        <input type="text" id="Firstname" required placeholder="First Name">
+        <input type="text" id="Secondname" required placeholder="Second Name">
+        <input type="text" id="Fathername"  placeholder="Father Name">
+  
+      <input type="tel" id="phone" pattern="^\+375\d{9}$" required placeholder="+375XXXXXXXXX">
+  
+      <input type="email" id="email" required placeholder="email">
+  
+  
+      <input type="date" id="dob" required>
+  
+  <input type="text" id="nickname" required placeholder="Nickname">
+    <button type="button" id="generateNickname">Generate Nickname</button>
+  
+      <select id="passwordChoice" required>
+        <option value="manual">Enter manually</option>
+        <option value="auto">Generate automatically</option>
+      </select>
+  
+
+    <div id="manualPasswordFields">
+      <input type="password" id="password" minlength="8" maxlength="20" required placeholder="password">
+      <input type="password" id="confirmPassword" minlength="8" maxlength="20" required placeholder="Confirm password">
+    </div>
+
+    <div id="close2" class="close">
+        <p>X</p>
+    </div> 
+    <div>
+      <input  type="checkbox" id="agreement" required>
+      <label for="agreement">I have read the <a href="#">User Agreement</a></label>
+    </div>
+    <button id="registerButton" style="cursor: pointer;">Register</button>
     </div>
     <header>
         <div class="a_container">
@@ -71,7 +83,7 @@
         <div class="a_container_2">
             <a id="Check_Delivery" href="">Check if We Deliver</a>
             <a id="Search" href="">Search</a>
-            <a id="Account" href="">Account</a>
+            <p id="Account" p>Account</p>
             <button id="languageButton" onclick="toggleLanguage()">English</button>
             <button id="themeButton" onclick="toggleTheme()">Theme</button>
         </div>

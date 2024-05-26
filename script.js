@@ -175,3 +175,178 @@ closebutton3.addEventListener("click", function() {
   feather.classList.toggle("whenburger");
   burger.classList.toggle("open");
 });
+var registeredUsers;
+
+fetch("Logins.json")
+    .then(response => response.json())
+    .then(data => {
+        // Проверяем, есть ли уже данные в localStorage
+        registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+        // Если данных нет, добавляем их из JSON файла
+        if (registeredUsers.length === 0) {
+            registeredUsers = data;
+            // Сохраняем данные в localStorage
+            localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+            console.log("User data added from JSON file to localStorage:", data);
+        }
+    })
+    .catch(error => console.error("Error loading JSON file:", error));
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var registerForm = document.getElementById("Register");
+  var phoneInput = registerForm.querySelector("#phone");
+  var emailInput = registerForm.querySelector("#email");
+  var dobInput = registerForm.querySelector("#dob");
+  var passwordChoiceSelect = registerForm.querySelector("#passwordChoice");
+  var manualPasswordFields = registerForm.querySelector("#manualPasswordFields");
+  var passwordInput = registerForm.querySelector("#password");
+  var confirmPasswordInput = registerForm.querySelector("#confirmPassword");
+  var firstNameInput = registerForm.querySelector("#Firstname");
+  var secondNameInput = registerForm.querySelector("#Secondname");
+  var fatherNameInput = registerForm.querySelector("#Fathername");
+  var nicknameInput = registerForm.querySelector("#nickname");
+  var generateNicknameButton = registerForm.querySelector("#generateNickname");
+  var agreementCheckbox = registerForm.querySelector("#agreement");
+  var registerButton = registerForm.querySelector("#registerButton");
+
+  registerButton.addEventListener("click", function() {
+      if (!agreementCheckbox.checked) {
+          alert("Please read and accept the User Agreement.");
+          return;
+      }
+
+      var phone = phoneInput.value;
+      var email = emailInput.value;
+      var dob = dobInput.value;
+      var passwordChoice = passwordChoiceSelect.value;
+      var password = passwordInput.value;
+      var confirmPassword = confirmPasswordInput.value;
+      var firstName = firstNameInput.value;
+      var secondName = secondNameInput.value;
+      var fatherName = fatherNameInput.value;
+      var nickname = nicknameInput.value;
+
+      var users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+    var emailExists = users.some(user => user.email === email);
+    if (emailExists) {
+        alert("This email is already registered.");
+        return;
+    }
+      // Валидация данных
+      if (!/^(\+375)\d{9}$/.test(phone)) {
+          alert("Please enter a valid phone number in the format +375XXXXXXXXX.");
+          return;
+      }
+
+      var today = new Date();
+      var dobDate = new Date(dob);
+      var age = today.getFullYear() - dobDate.getFullYear();
+      if (today.getMonth() < dobDate.getMonth() || (today.getMonth() === dobDate.getMonth() && today.getDate() < dobDate.getDate())) {
+          age--;
+      }
+      if (age < 16) {
+          alert("You must be at least 16 years old to register.");
+          return;
+      }
+
+      if (passwordChoice === "manual" && password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return;
+      }
+      else{
+        let length=15;
+        var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var password = "";
+        for (var i = 0; i < length; i++) {
+            var randomIndex = Math.floor(Math.random() * charset.length);
+            password += charset[randomIndex];
+        }     
+      }
+      // Остальная валидация пароля может быть добавлена здесь
+
+      // Остальная обработка регистрации может быть добавлена здесь
+
+      // Создание объекта пользователя
+      var newUser = {
+          email: email,
+          FirstName: firstName,
+          LastName: secondName,
+          FatherName: fatherName,
+          NickName: nickname,
+          PhoneNumber: phone,
+          password: password
+      };
+      registeredUsers.push(newUser);
+      // Сохраняем обновленный массив в localStorage
+      localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+      // Получение данных из localStorage
+      
+  });
+
+  generateNicknameButton.addEventListener("click", function() {
+      var firstName = firstNameInput.value;
+      var secondName = secondNameInput.value;
+      var nickname = generateNickname(firstName, secondName);
+      nicknameInput.value = nickname;
+  });
+
+  passwordChoiceSelect.addEventListener("change", function() {
+      if (passwordChoiceSelect.value === "auto") {
+          manualPasswordFields.style.display = "none";
+      } else {
+          manualPasswordFields.style.display = "block";
+      }
+  });
+});
+
+function generateNickname(firstName, secondName) {
+  var randomSuffix = Math.floor(Math.random() * 100);
+  return firstName.slice(0, 1).toLowerCase() + secondName.toLowerCase() + randomSuffix;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var loginForm = document.getElementById("Login");
+  var emailInput = loginForm.querySelector("input[type='email']");
+  var passwordInput = loginForm.querySelector("input[type='password']");
+  var loginButton = loginForm.querySelector("button");
+  var Acc_Name = document.getElementById("Account");
+
+  // При загрузке страницы пытаемся получить данные о пользователе из localStorage
+  var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  // Если данные о пользователе есть в localStorage, автоматически входим
+  if (loggedInUser && loggedInUser.email && loggedInUser.password) {
+      console.log("Вход выполнен автоматически для пользователя: " + loggedInUser.email);
+      Acc_Name.textContent = loggedInUser.FirstName;
+      // Здесь можно добавить дополнительные действия после успешного входа
+  }
+
+  loginButton.addEventListener("click", function() {
+      var email = emailInput.value;
+      var password = passwordInput.value;
+
+      // Получаем данные о пользователе из localStorage
+      var users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
+      // Проверяем, есть ли введенный email и пароль в localStorage
+      var user = users.find(user => user.email === email && user.password === password);
+      if (user) {
+          console.log("Успешный вход для пользователя: " + user.email);
+          Acc_Name.textContent = user.FirstName;
+          loginForm.classList.remove("open");
+          transparent.classList.remove("open");
+          // Сохраняем данные пользователя в localStorage
+          localStorage.setItem("loggedInUser", JSON.stringify(user));
+          // Здесь можно добавить дополнительные действия после успешного входа
+      } else {
+          console.log("Неверный email или пароль");
+          // Здесь можно добавить обработку случая, когда введенные данные неверны
+      }
+  });
+
+  var closeButton = loginForm.querySelector("#close1");
+  closeButton.addEventListener("click", function() {
+      loginForm.style.display = "none";
+  });
+});

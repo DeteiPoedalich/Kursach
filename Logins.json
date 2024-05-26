@@ -4,17 +4,17 @@
         "FirstName":"Dmitry",
         "LastName":"Mirankov",
         "FatherName":"Yurevich",
-        "login":"Dmitry",
+        "NickName":"Dmitry",
+        "PhoneNumber":"",
         "password":"12345"
-        
-        
     },
     {
         "email":"Liza@gmail.com",
         "FirstName":"Liza",
         "LastName":"qwer",
         "FatherName":"asdgf",
-        "login":"Liza",
+        "NickName":"Liza",
+        "PhoneNumber":"",
         "password":"123"
     },
     {
@@ -22,7 +22,8 @@
         "FirstName":"Dmitry",
         "LastName":"Mirankov",
         "FatherName":"Yurevich",
-        "login":"Admin",
+        "NickName":"Admin",
+        "PhoneNumber":"",
         "password":"1d2i3m4a5DIMAS"
     }
 ]
