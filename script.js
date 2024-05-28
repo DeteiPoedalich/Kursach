@@ -301,16 +301,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function generateNickname(firstName, secondName) {
-  var randomSuffix = Math.floor(Math.random() * 100);
-  return firstName.slice(0, 1).toLowerCase() + secondName.toLowerCase() + randomSuffix;
+  var randomSuffix = Math.floor(Math.random() * 10000);
+  return "User" + randomSuffix;
 }
-
+var Main_1=document.getElementById("Main_container1");
+var Acc_Name = document.getElementById("Account");
 document.addEventListener("DOMContentLoaded", function() {
   var loginForm = document.getElementById("Login");
   var emailInput = loginForm.querySelector("input[type='email']");
   var passwordInput = loginForm.querySelector("input[type='password']");
   var loginButton = loginForm.querySelector("button");
-  var Acc_Name = document.getElementById("Account");
+  
 
   // При загрузке страницы пытаемся получить данные о пользователе из localStorage
   var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -333,15 +334,28 @@ document.addEventListener("DOMContentLoaded", function() {
       var user = users.find(user => user.email === email && user.password === password);
       if (user) {
           console.log("Успешный вход для пользователя: " + user.email);
-          Acc_Name.textContent = user.FirstName;
+          localStorage.setItem("Acc_Name",user.FirstName);
+          Acc_Name.textContent=localStorage.getItem("Acc_Name");
+          Acc_Name.id="Acc_Name"
           loginForm.classList.remove("open");
           transparent.classList.remove("open");
+          GetStartBut.classList.toggle("user");
           // Сохраняем данные пользователя в localStorage
           localStorage.setItem("loggedInUser", JSON.stringify(user));
           // Здесь можно добавить дополнительные действия после успешного входа
       } else {
           console.log("Неверный email или пароль");
           // Здесь можно добавить обработку случая, когда введенные данные неверны
+      }
+      if(user&&user.NickName==="Admin"){
+        console.log("Успешный вход для пользователя: " + user.email);
+          localStorage.setItem("Acc_Name",user.FirstName);
+          Acc_Name.textContent=localStorage.getItem("Acc_Name");
+          Acc_Name.id="Acc_Name"
+          loginForm.classList.remove("open");
+          transparent.classList.remove("open");
+          GetStartBut.classList.toggle("user");
+          Main_1.classList.toggle("Admin");
       }
   });
 
@@ -350,3 +364,110 @@ document.addEventListener("DOMContentLoaded", function() {
       loginForm.style.display = "none";
   });
 });
+
+var GetStartBut=document.getElementById("Main_1_button");
+var logoutbut=document.getElementById("Log_out");
+
+if(localStorage.getItem("loggedInUser")!==null)
+  {
+    GetStartBut.classList.toggle("user");
+    Acc_Name.textContent=localStorage.getItem("Acc_Name");
+    Acc_Name.id="Acc_Name"
+  }
+  else{
+    GetStartBut.classList.remove("user");
+  }
+  
+  if (localStorage.getItem("Acc_Name") === "Admin"){
+    Main_1.classList.toggle("Admin");
+    GetStartBut.classList.toggle("user");
+    Acc_Name.textContent=localStorage.getItem("Acc_Name");
+    Acc_Name.id="Acc_Name"
+  }
+
+  logoutbut.addEventListener("click", function() {
+    Acc_Name.textContent="Account";
+    Acc_Name.id="Account";
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("Acc_Name");
+    GetStartBut.classList.remove("user");
+  });
+
+  const pagination_cont = document.querySelector('.pagination_cont');
+const pagination = pagination_cont.querySelector('.pagination');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const currentSlide = document.getElementById('current-slide');
+const totalSlides = document.getElementById('total-slide');
+var lang1=localStorage.getItem("language")
+
+let slidesData; 
+let currentIndex1 = 0;
+
+fetch('slides.json')
+  .then(response => response.json())
+  .then(data => {
+    slidesData = data.slides;
+    totalSlides.textContent = slidesData.length;
+
+    prevButton.addEventListener('click', () => {
+      changeSlide(currentIndex1 - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+      changeSlide(currentIndex1 + 1);
+    });
+
+    function changeSlide(index) {
+      if (index < 0) {
+        index = slidesData.length - 1;
+      } else if (index >= slidesData.length) {
+        index = 0; 
+      }
+
+      currentIndex1 = index;
+      showSlide(currentIndex1);
+      updatePagination();
+    }
+
+    function showSlide(index) {
+      if(index==5){
+        applyTranslations(lang1);
+        slide = slidesData[5];
+        pagination_cont.innerHTML = `
+      <div class="${slide.div_class}">
+      <button id="${slide.id_button}">${slide.button_text}</button>
+  </div>
+      `;
+      }
+      else{
+        applyTranslations(lang1);
+        const slide = slidesData[index];
+        pagination_cont.innerHTML = `
+        <div class="${slide.div_class}">
+        <div class="${slide.stars}">
+            <img src="${slide.src}" alt="">
+            <img src="${slide.src}" alt="">
+            <img src="${slide.src}" alt="">
+            <img src="${slide.src}" alt="">
+            <img src="${slide.src}" alt="">
+        </div>
+        <p id="${slide.id_text_1}" class="${slide.text_1_class}">${slide.text_1}</p>
+        <p id="${slide.id_text_2}" class="${slide.text_2_class}">${slide.text_2}</p>
+    </div>
+        `;
+      }
+      
+    }
+
+    function updatePagination() {
+      applyTranslations(lang1);
+      currentSlide.textContent = currentIndex1 + 1;
+    }
+
+    showSlide(currentIndex1);
+    updatePagination();
+  })
+  .catch(error => {
+    console.error('Ошибка загрузки JSON-файла:', error);
+  });
