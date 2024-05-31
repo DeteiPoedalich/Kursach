@@ -91,3 +91,21 @@ closebutton3.addEventListener("click", function() {
   feather.classList.toggle("whenburger");
   burger.classList.toggle("open");
 });
+var Acc_Name = document.getElementById("Account");
+var Main_text=document.getElementById("Site_Name");
+var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if(loggedInUser&&loggedInUser.NickName==="Admin"){
+  console.log("Успешный вход для пользователя: " + loggedInUser.email);
+    localStorage.setItem("Acc_Name",loggedInUser.FirstName);
+    Acc_Name.textContent=localStorage.getItem("Acc_Name");
+    Acc_Name.id="Acc_Name"
+    Main_text.classList.toggle("Admin");
+}
+var logoutbut=document.getElementById("Log_out");
+logoutbut.addEventListener("click", function() {
+  Acc_Name.textContent="Account";
+  Acc_Name.id="Account";
+  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("Acc_Name");
+  Main_text.classList.remove("Admin");
+});

@@ -122,45 +122,81 @@ loadTranslations().then(() => {
 let arrowleft = document.getElementById("arrow-left");
 let arrowright = document.getElementById("arrow-right");
 let slider = document.querySelector(".Main_container6_rectangles");
-
-let slideWidth;
+slider.classList.add('slide-transition');
+let slideWidth=0;
 let i = 0;
-function updateCountOfItems() {
-  if (window.innerWidth <= 1280) {
-    slideWidth = 5;
+let m=0;
+
+  
+    slideWidth = 2;
+  
+  if (document.documentElement.clientWidth === 1280) {
+    slideWidth = 2;
   } 
-  else{
-    slideWidth=2;
-  }
-}
+   if (document.documentElement.clientWidth === 768) {
+    slideWidth = 3;
+    m=10;
+  } 
+   if (document.documentElement.clientWidth === 320) {
+    slideWidth = 6;
+    m=10;
+  } 
 
-updateCountOfItems();
+arrowright.addEventListener('click', function () {
+  
+  
+  if (window.innerWidth === 1920) {
+    slideWidth = 2;
+  } 
+  if (document.documentElement.clientWidth === 1280) {
+    slideWidth = 2;
+  } 
+   if (document.documentElement.clientWidth === 768) {
+    slideWidth = 3;
+  } 
+   if (document.documentElement.clientWidth === 320) {
+    slideWidth = 6;
+    m=10;
+  } 
 
-arrowright.addEventListener('click',function(){
+    if (i < slideWidth - 1) {
+      i++;
+    } else {
+      i = 0;
+    }
+    slider.style.transform = `translateX(-${i * document.documentElement.clientWidth + m}px)`;
+    console.log(slideWidth);
+  
+});
 
-  if(i < slideWidth -1){
-    i++;
-  }
-  else{
-    i =0;
-  }
-    slider.style.transform = `translateX(-${i*1927}px)`;
-    console.log(i);
-}
+arrowleft.addEventListener('click', function () {
+ 
+  
+  if (window.innerWidth === 1920) {
+    slideWidth = 2;
+  } 
+  if (document.documentElement.clientWidth === 1280) {
+    slideWidth = 2;
+  } 
+   if (document.documentElement.clientWidth === 768) {
+    slideWidth = 3;
+  } 
+   if (document.documentElement.clientWidth === 320) {
+    slideWidth = 6;
+    m=10;
+  } 
 
-)
-arrowleft.addEventListener('click',function(){
+    if (i > 0) {
+      i--;
+    } else {
+      i = slideWidth - 1;
+    }
+    slider.style.transform = `translateX(-${i * (document.documentElement.clientWidth+m)}px)`;
+    console.log(slideWidth);
+  
+});
 
-  if(i > 0){
-    i--;
-  }
-  else{
-    i = slideWidth -1;
-  }
-  slider.style.transform = `translateX(-${i*1927}px)`;  
-  console.log(i);
-}
-)
+
 var burger=document.getElementById("burger");
 var burgeropen=document.getElementById("burger_open")
 var feather=document.getElementById("feather")

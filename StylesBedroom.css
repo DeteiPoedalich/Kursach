@@ -1,3 +1,19 @@
+@keyframes changeSizeRect {
+    from {width: 257.5px;height:261px;}
+    to {width: 265px;height:269px; }
+}
+@keyframes socialinvert {
+    from { filter: invert(0);
+        background-color: black;}
+    to {filter: invert(1); 
+        background-color: white;}
+}
+@keyframes socialinvertinvert {
+    from { filter: invert(0);
+        background-color: black;}
+    to {filter: invert(1);
+        background-color: white; }
+}
 body{
     display: flex;
     flex-direction: column;
@@ -71,6 +87,50 @@ header{
     cursor: pointer;
     
 }
+#languageButton:hover{
+    border: 1px solid black
+}
+#themeButton:hover{
+    border: 1px solid black
+}
+.a_container a:hover{
+    border-bottom:2px solid #E9672B ;
+}
+.a_container_2 a:hover, .a_container_2 p:hover{
+    border-bottom:2px solid #E9672B ;
+}
+#languageButton:hover{
+    border: 1px solid black
+}
+body.dark #languageButton:hover{
+    border: 1px solid white
+}
+#themeButton:hover{
+    border: 1px solid black
+}
+body.dark #themeButton:hover{
+    border: 1px solid white
+}
+.header_container_img_cart:hover{
+    filter: invert(0.7);
+}
+body.dark .header_container_img_cart:hover{
+    filter:invert(0.7);
+     cursor: pointer;
+ }
+ .header_container_img img:hover{
+    width: 42%;
+}
+.Social_media_img img:hover{
+    animation: socialinvert 1s ease;
+    border-radius: 50px;
+}
+body.dark .Social_media_img img:hover{
+    animation: socialinvertinvert 1s ease;
+}
+.rectangle:hover{
+    animation: changeSizeRect 1s ease;
+   }
 .header_container_img{
     width: 23%;
     margin-top:0.1% ;
@@ -149,6 +209,7 @@ body.dark .burger_open.open button{
     color:white;
     width: 40%;
 }
+
 .header_container_img.whenburger{
     display: flex;
     justify-content: center;
@@ -184,6 +245,9 @@ Main{
     font-family: Roboto;
     font-size: 56px;
 }
+.Site_Name.Admin{
+    display: none;
+}
 .rectangles{
     display: flex;
     flex-wrap: wrap;
@@ -204,8 +268,9 @@ Main{
 }
 footer{
     background-color: #F3F0EC;
+    margin-top:9.8% ;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:2%;
 }
 .footer_container{
@@ -291,3 +356,24 @@ footer{
     padding-bottom: 20%;
     cursor: pointer;
 }
+.footer_and_contact{
+    display: flex;
+    flex-direction: row;
+}
+.Contact_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1%;
+}
+.Contact_info a,p{
+    font-family: roboto;
+    font-size: 120%;
+    text-decoration: none;
+    color:black;
+}
+.map_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
