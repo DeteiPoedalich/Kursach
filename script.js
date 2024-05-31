@@ -265,10 +265,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       var users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
     var emailExists = users.some(user => user.email === email);
-    if (emailExists) {
-        alert("This email is already registered.");
-        return;
-    }
+
+    
       // Валидация данных
       if (!/^(\+375)\d{9}$/.test(phone)) {
           alert("Please enter a valid phone number in the format +375XXXXXXXXX.");
@@ -301,7 +299,34 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       // Остальная валидация пароля может быть добавлена здесь
 
-      // Остальная обработка регистрации может быть добавлена здесь
+      if (emailExists) {
+        alert("This email is already registered.");
+        return;
+    }
+    if (!email) {
+      alert("E-Mail is necessary.");
+      return;
+  }
+  if (!dob) {
+      alert("Date of Birth is necessary.");
+      return;
+  }
+  if (!password) {
+      alert("Password is necessary.");
+      return;
+  }
+  if (!firstName) {
+      alert("First Name is necessary.");
+      return;
+  }
+  if (!secondName) {
+      alert("Second Name is necessary.");
+      return;
+  }
+  if (!nickname) {
+      alert("Nickname is necessary.");
+      return;
+  }
 
       // Создание объекта пользователя
       var newUser = {

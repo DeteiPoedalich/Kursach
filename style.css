@@ -239,7 +239,7 @@ header{
     justify-content: center;
     align-items: center;
    height: 800px;
-   transform: translateX(300px);
+   transform: translateX(23%);
    overflow: hidden;
    font-family: roboto;
    gap:5%;
@@ -251,7 +251,7 @@ header{
     background-color: #E9672B;
 }
 .Login input{
-    width: 30%;
+    width: 50%;
     height: 50px;
     border-radius: 20px;
     border: none;
@@ -301,7 +301,7 @@ header{
     justify-content: center;
     align-items: center;
    height: 800px;
-   transform: translateX(300px);
+   transform: translateX(23%);
    overflow: hidden;
    font-family: roboto;
    gap:1%;
@@ -342,7 +342,7 @@ display: none;
     justify-content: center;
     align-items: center;
    height: 800px;
-   transform: translateX(300px);
+   transform: translateX(23%);
    overflow: hidden;
    font-family: roboto;
    gap:5%;

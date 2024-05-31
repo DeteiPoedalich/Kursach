@@ -94,6 +94,12 @@ closebutton3.addEventListener("click", function() {
 var Acc_Name = document.getElementById("Account");
 var Main_text=document.getElementById("Site_Name");
 var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if(loggedInUser)
+{
+  localStorage.setItem("Acc_Name",loggedInUser.FirstName);
+   Acc_Name.textContent=localStorage.getItem("Acc_Name");
+   Acc_Name.id="Acc_Name";
+}
 if(loggedInUser&&loggedInUser.NickName==="Admin"){
   console.log("Успешный вход для пользователя: " + loggedInUser.email);
     localStorage.setItem("Acc_Name",loggedInUser.FirstName);
