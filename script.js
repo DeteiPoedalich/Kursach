@@ -145,16 +145,16 @@ let m=0;
 arrowright.addEventListener('click', function () {
   
   
-  if (window.innerWidth === 1920) {
+  if (window.innerWidth <= 1920) {
     slideWidth = 2;
   } 
-  if (document.documentElement.clientWidth === 1280) {
+  if (document.documentElement.clientWidth <= 1280) {
     slideWidth = 2;
   } 
-   if (document.documentElement.clientWidth === 768) {
+   if (document.documentElement.clientWidth <= 768) {
     slideWidth = 3;
   } 
-   if (document.documentElement.clientWidth === 320) {
+   if (document.documentElement.clientWidth <= 320) {
     slideWidth = 6;
     m=10;
   } 
@@ -395,10 +395,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
 
-  var closeButton = loginForm.querySelector("#close1");
-  closeButton.addEventListener("click", function() {
-      loginForm.style.display = "none";
-  });
+
 });
 
 var GetStartBut=document.getElementById("Main_1_button");
@@ -427,6 +424,9 @@ if(localStorage.getItem("loggedInUser")!==null)
     localStorage.removeItem("loggedInUser");
     localStorage.removeItem("Acc_Name");
     GetStartBut.classList.remove("user");
+    if(localStorage.getItem("Acc_Name") === "Admin"){
+      Main_1.classList.remove("Admin");
+    }
   });
 
   const pagination_cont = document.querySelector('.pagination_cont');
