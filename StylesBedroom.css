@@ -111,6 +111,37 @@ body.dark #languageButton:hover{
 body.dark #themeButton:hover{
     border: 1px solid white
 }
+#languageButton2{
+    font-family: roboto;
+    font-size: 100%;
+    font-weight: 420%;
+    border: none;
+    background-color: #E9672B;
+    border-radius:5px ;
+    cursor: pointer;
+}
+#languageButton2:hover{
+    border: 1px solid black
+}
+body.dark #languageButton2:hover{
+    border: 1px solid white
+}
+#themeButton2{
+    font-family: roboto;
+    font-size: 100%;
+    font-weight: 420%;
+    border: none;
+    background-color: #E9672B;
+    border-radius:5px ;
+    cursor: pointer;
+    
+}
+#themeButton2:hover{
+    border: 1px solid black
+}
+body.dark #themeButton2:hover{
+    border: 1px solid white
+}
 .header_container_img_cart:hover{
     filter: invert(0.7);
 }
@@ -163,9 +194,6 @@ body.dark .Social_media_img img:hover{
 }
 .burger.open{
     display: none;
-}
-.burger_open.dark{
-    filter: invert(1);
 }
 .burger_open{
     display: none;
@@ -251,6 +279,8 @@ Main{
 .rectangles{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     gap:55px;
 }

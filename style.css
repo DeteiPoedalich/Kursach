@@ -414,6 +414,37 @@ body.dark #languageButton:hover{
 body.dark #themeButton:hover{
     border: 1px solid white
 }
+#languageButton2{
+    font-family: roboto;
+    font-size: 100%;
+    font-weight: 420%;
+    border: none;
+    background-color: #E9672B;
+    border-radius:5px ;
+    cursor: pointer;
+}
+#languageButton2:hover{
+    border: 1px solid black
+}
+body.dark #languageButton2:hover{
+    border: 1px solid white
+}
+#themeButton2{
+    font-family: roboto;
+    font-size: 100%;
+    font-weight: 420%;
+    border: none;
+    background-color: #E9672B;
+    border-radius:5px ;
+    cursor: pointer;
+    
+}
+#themeButton2:hover{
+    border: 1px solid black
+}
+body.dark #themeButton2:hover{
+    border: 1px solid white
+}
 .header_container_img_cart{
     margin: 0.4% 3% 0 0;
 }
@@ -503,6 +534,7 @@ body.dark .Main_container1_button:hover{
    margin: 3% 0 0 7.1%;
    gap:2.65%;
    width: 90%;
+   
 }
 .Main_container2_rectangles img{
     width: 100%;

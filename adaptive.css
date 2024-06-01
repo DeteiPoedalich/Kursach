@@ -938,6 +938,18 @@
         margin: 1.7% 0 0 0;
         width: 70%;
     }
+    .Main_container2_rectangle1{
+        width:80%;   
+    }
+    .Main_container2_rectangle2{
+        width:80%;
+    }
+    .Main_container2_rectangle3{
+        width:80%;
+    }
+    .Main_container2_rectangle4{
+        width:80%;
+    }
 }
 @media (max-width: 500px) {
 .Main_container1_img{
