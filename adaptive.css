@@ -773,12 +773,12 @@
         font-family: "Roboto";
         font-size:113%;
         margin-top: 5%;
-        width: 68.5%;
+        width: 30%;
         border: none;
-        padding: 8% 0 8% 0;
+        padding: 4% 0 4% 0;
         border-radius: 40px;
         background-color: #E9672B;
-        width: 50%;
+        
     }
     footer{
         background-color: #F3F0EC;

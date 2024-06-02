@@ -521,6 +521,7 @@ body.dark .Main_container1_button:hover{
 {
     margin-top:9.2%;
 }
+
 .Main_container2_text{
     font-family: "Roboto";
     font-size: 300%;
@@ -534,7 +535,9 @@ body.dark .Main_container1_button:hover{
    margin: 3% 0 0 7.1%;
    gap:2.65%;
    width: 90%;
-   
+}
+.Main_container2_rectangles.nolog{
+    display: none;
 }
 .Main_container2_rectangles img{
     width: 100%;

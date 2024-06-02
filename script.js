@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       else{
         let length=15;
-        var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_+=%@!#$^&*()";
         var password = "";
         for (var i = 0; i < length; i++) {
             var randomIndex = Math.floor(Math.random() * charset.length);
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }     
       }
       // Остальная валидация пароля может быть добавлена здесь
-
+      
       if (emailExists) {
         alert("This email is already registered.");
         return;
@@ -425,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var GetStartBut=document.getElementById("Main_1_button");
 var logoutbut=document.getElementById("Log_out");
-
+var Main_container2_rectangles=document.getElementById("Main_container2_rectangles");
 if(localStorage.getItem("loggedInUser")!==null)
   {
     GetStartBut.classList.toggle("user");
@@ -449,10 +449,11 @@ if(localStorage.getItem("loggedInUser")!==null)
     localStorage.removeItem("loggedInUser");
     localStorage.removeItem("Acc_Name");
     GetStartBut.classList.remove("user");
-    if(localStorage.getItem("Acc_Name") === "Admin"){
       Main_1.classList.remove("Admin");
-    }
   });
+  if(!localStorage.getItem("loggedInUser")){
+    Main_container2_rectangles.classList.toggle("nolog");
+  }
 
   const pagination_cont = document.querySelector('.pagination_cont');
 const pagination = pagination_cont.querySelector('.pagination');
