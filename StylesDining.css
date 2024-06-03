@@ -20,12 +20,14 @@ body{
     gap: 55px;
     background-color: #FBF8F5;
     overflow-x: hidden;
+    margin: 0;
 }
 body p{
     margin: 0;
 }
 body.dark {
     background-color: #000000d7; 
+    margin: 0;
 }
 body.dark a{
     color: #ffffffd3;
@@ -153,9 +155,6 @@ body.dark .header_container_img_cart:hover{
 body.dark .Social_media_img img:hover{
     animation: socialinvertinvert 1s ease;
 }
-.rectangle:hover{
-    animation: changeSizeRect 1s ease;
-   }
 .header_container_img{
     width: 23%;
     margin-top:0.1% ;
@@ -170,7 +169,7 @@ body.dark .Social_media_img img:hover{
     justify-content: space-evenly;  
     width:34%;
 }
-.a_container_2 a{
+.a_container_2 a,p{
     text-decoration: none;
     color:black;
     font-family: "Roboto";
@@ -198,7 +197,6 @@ body.dark .burger_open.open a{
 }
 .burger_open.open{
     transform: translateY(83px);
-    margin-right: 1%;
     display: flex;
     flex-direction: column;
     background-color: #E9672B;
@@ -261,6 +259,7 @@ Main{
     flex-direction: column;
     gap: 55px;
     align-items: center;
+    justify-content: center;
 }
 .Site_Name{
     text-align: center;
@@ -273,6 +272,8 @@ Main{
 .rectangles{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     gap:55px;
 }
@@ -285,8 +286,17 @@ Main{
     border: 1px solid black;
     border-radius: 25px;
 }
+.rectangle p{
+    margin: 0;
+}
+.rectangle:hover{
+ animation: changeSizeRect 1s ease;
+}
 .rectangle img{
     border-radius: 25px 25px 0px 0px ;
+}
+.rectangle.Admin img{
+    display: none;
 }
 footer{
     background-color: #F3F0EC;
@@ -398,4 +408,10 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    }
+    #Log_out.nolog{
+        display: none;
+    }
+    #view_users.notAdmin{
+        display: none;
     }

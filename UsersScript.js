@@ -1,4 +1,20 @@
-var themeButton = document.getElementById("themeButton");
+document.addEventListener('DOMContentLoaded', function() {
+    var usersContainer = document.querySelector('.Users');
+    var users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+  
+    if (users.length === 0) {
+      usersContainer.textContent = 'Нет зарегистрированных пользователей.';
+    } else {
+  
+      for (var i = 0; i < users.length; i++) {
+        var userItem = document.createElement('div');
+        userItem.classList.add("User");
+        userItem.innerHTML ='<p>First Name: '+ users[i].FirstName +'</p>'+ '<br>'+'<p>Last Name: '+users[i].LastName +'</p>'+'<br>'+'<p>Nickname: '+users[i].NickName +'</p>'+'<br>'+'<p>E-Mail: '+ users[i].email+'</p>';
+        usersContainer.appendChild(userItem);
+      }
+    }
+  });
+  var themeButton = document.getElementById("themeButton");
   var body = document.body;
   var burgeropened=document.getElementById("burger_open");
 function toggleTheme() {
@@ -80,8 +96,6 @@ loadTranslations().then(() => {
 var burger=document.getElementById("burger");
 var burgeropen=document.getElementById("burger_open")
 var feather=document.getElementById("feather")
-var viewuserbut=document.getElementById("view_users");
-viewuserbut.classList.add("notAdmin");
 burger.addEventListener("click", function() {
   feather.classList.toggle("whenburger");
   burger.classList.toggle("open");
@@ -101,18 +115,12 @@ if(loggedInUser)
   localStorage.setItem("Acc_Name",loggedInUser.FirstName);
    Acc_Name.textContent=localStorage.getItem("Acc_Name");
    Acc_Name.id="Acc_Name";
-   
 }
 if(loggedInUser&&loggedInUser.NickName==="Admin"){
   console.log("Успешный вход для пользователя: " + loggedInUser.email);
     localStorage.setItem("Acc_Name",loggedInUser.FirstName);
     Acc_Name.textContent=localStorage.getItem("Acc_Name");
     Acc_Name.id="Acc_Name"
-    Main_text.classList.toggle("Admin");
-    viewuserbut.classList.remove("notAdmin");
-}
-else{
-  viewuserbut.classList.add("notAdmin");
 }
 var logoutbut=document.getElementById("Log_out");
 logoutbut.addEventListener("click", function() {
@@ -120,11 +128,6 @@ logoutbut.addEventListener("click", function() {
   Acc_Name.id="Account";
   localStorage.removeItem("loggedInUser");
   localStorage.removeItem("Acc_Name");
-  GetStartBut.classList.remove("user");
-    Main_1.classList.remove("Admin");
-    Main_container2_rectangles.classList.add("nolog");
-    logoutbut.classList.add("nolog");
-    viewuserbut.classList.add("notAdmin");
 });
 var resetset= document.getElementById("reset");
 resetset.addEventListener("click", function() {

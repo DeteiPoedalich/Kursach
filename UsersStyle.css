@@ -254,49 +254,35 @@ Main{
     flex-direction: column;
     gap: 55px;
 }
-.AllRectangles{
+body.dark #user_text1{
+    color: white;
+}
+.Users{
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 55px;
-    align-items: center;
-    justify-content: center;
+    gap:30px;
 }
-.Site_Name{
-    text-align: center;
-    font-family: Roboto;
-    font-size: 56px;
-}
-.Site_Name.Admin{
-    display: none;
-}
-.rectangles{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap:55px;
-}
-.rectangle{
-    background-color: white;
-    width: 257.5px;
-    height:261px;
-    text-align: center;
+#user_text1{
     font-family: roboto;
-    border: 1px solid black;
-    border-radius: 25px;
-}
-.rectangle p{
+    font-size: 250%;
+    text-decoration: none;
     margin: 0;
+    text-align: center;
 }
-.rectangle:hover{
- animation: changeSizeRect 1s ease;
+.User{
+    background-color: #F3F0EC;
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3% 3% 3% 3% ;
+    border-radius: 15px;
 }
-.rectangle img{
-    border-radius: 25px 25px 0px 0px ;
-}
-.rectangle.Admin img{
-    display: none;
+body.dark .User{
+    background-color: #111111
 }
 footer{
     background-color: #F3F0EC;
@@ -408,10 +394,4 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    }
-    #Log_out.nolog{
-        display: none;
-    }
-    #view_users.notAdmin{
-        display: none;
     }

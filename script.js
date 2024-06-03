@@ -419,6 +419,7 @@ document.addEventListener("DOMContentLoaded", function() {
           transparent.classList.remove("open");
           GetStartBut.classList.toggle("user");
           Main_1.classList.toggle("Admin");
+          viewuserbut.classList.remove("notAdmin");
       }
   });
 
@@ -427,6 +428,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var GetStartBut=document.getElementById("Main_1_button");
 var logoutbut=document.getElementById("Log_out");
+var viewuserbut=document.getElementById("view_users");
 var Main_container2_rectangles=document.getElementById("Main_container2_rectangles");
 if(localStorage.getItem("loggedInUser"))
   {
@@ -446,7 +448,11 @@ if(localStorage.getItem("loggedInUser"))
     Main_1.classList.toggle("Admin");
     GetStartBut.classList.toggle("user");
     Acc_Name.textContent=localStorage.getItem("Acc_Name");
-    Acc_Name.id="Acc_Name"
+    Acc_Name.id="Acc_Name";
+    viewuserbut.classList.remove("notAdmin");
+  }
+  else{
+    viewuserbut.classList.add("notAdmin");
   }
 
   logoutbut.addEventListener("click", function() {
@@ -458,6 +464,7 @@ if(localStorage.getItem("loggedInUser"))
       Main_1.classList.remove("Admin");
       Main_container2_rectangles.classList.add("nolog");
       logoutbut.classList.add("nolog");
+      viewuserbut.classList.add("notAdmin");
   });
 
 
@@ -542,7 +549,6 @@ fetch('slides.json')
   
   var resetset= document.getElementById("reset");
   resetset.addEventListener("click", function() {
-    localStorage.removeItem("loggedInUser");
     localStorage.removeItem("language");
     localStorage.removeItem("body-theme");
     location. reload() 

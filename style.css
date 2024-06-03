@@ -1094,6 +1094,7 @@ body.dark .NEWSLETTER p{
     font-size: 120%;
     text-decoration: none;
     color:black;
+    margin: 0;
 }
 .map_box{
     display: flex;
@@ -1102,5 +1103,8 @@ body.dark .NEWSLETTER p{
     width: 100%;
     }
 #Log_out.nolog{
+    display: none;
+}
+#view_users.notAdmin{
     display: none;
 }
