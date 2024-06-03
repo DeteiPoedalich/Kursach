@@ -1101,3 +1101,6 @@ body.dark .NEWSLETTER p{
     align-items: center;
     width: 100%;
     }
+#Log_out.nolog{
+    display: none;
+}

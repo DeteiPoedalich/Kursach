@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }     
       }
       // Остальная валидация пароля может быть добавлена здесь
-      
+
       if (emailExists) {
         alert("This email is already registered.");
         return;
@@ -401,6 +401,8 @@ document.addEventListener("DOMContentLoaded", function() {
           loginForm.classList.remove("open");
           transparent.classList.remove("open");
           GetStartBut.classList.toggle("user");
+          Main_container2_rectangles.classList.remove("nolog");
+          logoutbut.classList.remove("nolog");
           // Сохраняем данные пользователя в localStorage
           localStorage.setItem("loggedInUser", JSON.stringify(user));
           // Здесь можно добавить дополнительные действия после успешного входа
@@ -426,14 +428,18 @@ document.addEventListener("DOMContentLoaded", function() {
 var GetStartBut=document.getElementById("Main_1_button");
 var logoutbut=document.getElementById("Log_out");
 var Main_container2_rectangles=document.getElementById("Main_container2_rectangles");
-if(localStorage.getItem("loggedInUser")!==null)
+if(localStorage.getItem("loggedInUser"))
   {
     GetStartBut.classList.toggle("user");
     Acc_Name.textContent=localStorage.getItem("Acc_Name");
-    Acc_Name.id="Acc_Name"
+    Acc_Name.id="Acc_Name";
+    Main_container2_rectangles.classList.remove("nolog");
+    logoutbut.classList.remove("nolog");
   }
   else{
     GetStartBut.classList.remove("user");
+    Main_container2_rectangles.classList.add("nolog");
+    logoutbut.classList.add("nolog");
   }
   
   if (localStorage.getItem("Acc_Name") === "Admin"){
@@ -450,10 +456,10 @@ if(localStorage.getItem("loggedInUser")!==null)
     localStorage.removeItem("Acc_Name");
     GetStartBut.classList.remove("user");
       Main_1.classList.remove("Admin");
+      Main_container2_rectangles.classList.add("nolog");
+      logoutbut.classList.add("nolog");
   });
-  if(!localStorage.getItem("loggedInUser")){
-    Main_container2_rectangles.classList.toggle("nolog");
-  }
+
 
   const pagination_cont = document.querySelector('.pagination_cont');
 const pagination = pagination_cont.querySelector('.pagination');
@@ -532,4 +538,12 @@ fetch('slides.json')
   })
   .catch(error => {
     console.error('Ошибка загрузки JSON-файла:', error);
+  });
+  
+  var resetset= document.getElementById("reset");
+  resetset.addEventListener("click", function() {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("language");
+    localStorage.removeItem("body-theme");
+    location. reload() 
   });
