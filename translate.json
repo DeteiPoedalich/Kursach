@@ -172,7 +172,10 @@
     "Dining_Text14":"Aubrey Dining Chair, Wheat $17/mo $399 to buy",
     "Dining_Text15":"Aubrey Dining Table, Amber $51/mo $1,199 to buy",
     "Dining_Text16":"Aubrey Dining Table, Black $47/mo $1,099 to buy",
-    "Dining_Text17":"Aubrey Dining Table, Wheat $51/mo $1,199 to buy"
+    "Dining_Text17":"Aubrey Dining Table, Wheat $51/mo $1,199 to buy",
+    "Log_Out":"Log out",
+    "reset":"Reset settings",
+    "view_users":"View Users"
     },
     "ru":{
     "Furniture":"Мебель",
@@ -348,6 +351,9 @@
 "Dining_Text14": "Обеденное кресло Aubrey, $17/мес, $399 покупка",
 "Dining_Text15": "Обеденный стол Aubrey, $51/мес, $1,199 покупка",
 "Dining_Text16": "Обеденный стол Aubrey, черный $47/мес, $1,099 покупка",
-"Dining_Text17": "Обеденный стол Aubrey, $51/мес, $1,199 покупка"
+"Dining_Text17": "Обеденный стол Aubrey, $51/мес, $1,199 покупка",
+"Log_Out":"Выйти из аккаунта",
+    "reset":"Сбросить настройки",
+    "view_users":"Просмотреть пользователей"
     }
 }
