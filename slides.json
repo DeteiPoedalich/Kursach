@@ -1,0 +1,64 @@
+{
+    "slides": [
+      {
+        "div_class": "pagination",
+  "src": "img/star_pink.png",
+  "stars": "stars",
+  "text_1_class": "Main_container6_rectangle_review",
+  "text_1": "Honestly BEST EXPERIENCE moving ever.",
+  "text_2_class": "Main_container6_rectangle_who",
+  "text_2": "- Julie, San Francisco, CA",
+  "id_text_1": "Main_6_text2",
+  "id_text_2": "Main_6_text3"
+      },
+      {
+        "div_class":"pagination2",
+        "src":"img/star_yellow.png",
+        "stars":"stars",
+        "text_1_class":"Main_container6_rectangle_review",
+        "text_1":"Extremely easy! Browsed for furniture and it was in my new apartment within a week.",
+        "text_2_class":"Main_container6_rectangle_who",
+        "text_2":"- Anthony, Los Angeles, CA",
+        "id_text_1":"Main_6_text4",
+        "id_text_2":"Main_6_text5"
+      },
+      {
+        "div_class":"pagination3",
+        "src":"img/star_green.png",
+        "stars":"stars",
+        "text_1_class":"Main_container6_rectangle_review",
+        "text_1":"THIS JUST MAKES SENSE. Truly obsessed with Feather.",
+        "text_2_class":"Main_container6_rectangle_who",
+        "text_2":"- Wesley, New York City, NY",
+        "id_text_1":"Main_6_text6",
+        "id_text_2":"Main_6_text7"
+      },
+      {
+        "div_class":"pagination4",
+        "src":"img/star_red.png",
+        "stars":"stars",
+        "text_1_class":"Main_container6_rectangle_review",
+        "text_1":"Flawless experience. From order, delivery, and now enjoying - couldn’t be more impressed with Feather.",
+        "text_2_class":"Main_container6_rectangle_who",
+        "text_2":"- Robert, Los Angeles, CA",
+        "id_text_1":"Main_6_text8",
+        "id_text_2":"Main_6_text9"
+      },
+      {
+        "div_class":"pagination5",
+        "src":"img/star_ligthgreen.png",
+        "stars":"stars",
+        "text_1_class":"Main_container6_rectangle_review",
+        "text_1":"The items look exactly as I pictured, and I am so SO happy!",
+        "text_2_class":"Main_container6_rectangle_who",
+        "text_2":"- Ian, New York City, NY",
+        "id_text_1":"Main_6_text10",
+        "id_text_2":"Main_6_text11"
+      },
+      {
+        "div_class":"pagination6",
+        "button_text":"All Reviews",
+        "id_button":"Main_6_text12"
+      }
+    ]
+}
