@@ -1580,6 +1580,7 @@
     }
     .About{
         display: flex;
+        margin-top:40px ;
         flex-direction: column;
     }
     .About p{
