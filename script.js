@@ -234,8 +234,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var phoneInput = registerForm.querySelector("#phone");
   var emailInput = registerForm.querySelector("#email");
   var dobInput = registerForm.querySelector("#dob");
-  var passwordChoiceSelect = registerForm.querySelector("#passwordChoice");
-  var manualPasswordFields = registerForm.querySelector("#manualPasswordFields");
   var passwordInput = registerForm.querySelector("#password");
   var confirmPasswordInput = registerForm.querySelector("#confirmPassword");
   var firstNameInput = registerForm.querySelector("#Firstname");
@@ -245,7 +243,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var generateNicknameButton = registerForm.querySelector("#generateNickname");
   var agreementCheckbox = registerForm.querySelector("#agreement");
   var registerButton = registerForm.querySelector("#registerButton");
-
   registerButton.addEventListener("click", function() {
       if (!agreementCheckbox.checked) {
           alert("Please read and accept the User Agreement.");
@@ -254,19 +251,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
       var phone = phoneInput.value;
       var email = emailInput.value;
-      var dob = dobInput.value;
-      var passwordChoice = passwordChoiceSelect.value;
-      var password = passwordInput.value;
+      var dob = dobInput.value;     
+      let password = passwordInput.value;
       var confirmPassword = confirmPasswordInput.value;
       var firstName = firstNameInput.value;
       var secondName = secondNameInput.value;
       var fatherName = fatherNameInput.value;
       var nickname = nicknameInput.value;
-
+      
       var users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
     var emailExists = users.some(user => user.email === email);
-
+    validateEmail();
+    validatePassword(password);
+    const validationMessage = validatePassword(password);
     
+    if (validationMessage) {
+      alert(validationMessage);
+      return; // Добавляем эту строку для остановки выполнения кода
+    }
       // Валидация данных
       if (!/^(\+375)\d{9}$/.test(phone)) {
           alert("Please enter a valid phone number in the format +375XXXXXXXXX.");
@@ -283,21 +285,41 @@ document.addEventListener("DOMContentLoaded", function() {
           alert("You must be at least 16 years old to register.");
           return;
       }
-
-      if (passwordChoice === "manual" && password !== confirmPassword) {
-          alert("Passwords do not match.");
-          return;
+      function validateEmail() {
+        email = emailInput.value.trim();
+      
+        // Проверяем, что email содержит один из допустимых доменов
+        const allowedDomains = ['@gmail.com', '@mail.ru', '@yandex.ru'];
+        const isValidDomain = allowedDomains.some(domain => email.endsWith(domain));
+      
+        if (!isValidDomain) {
+          alert('Please enter a valid email address (e.g., @gmail.com, @mail.ru, @yandex.ru)');
+        }
       }
-      else{
-        let length=15;
-        var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_+=%@!#$^&*()";
-        var password = "";
-        for (var i = 0; i < length; i++) {
-            var randomIndex = Math.floor(Math.random() * charset.length);
-            password += charset[randomIndex];
-        }     
+      function validatePassword(password) {
+        // Проверяем длину пароля
+        if (password.length < 8) {
+          return "Пароль должен содержать не менее 8 символов";
+        }
+      
+        // Проверяем наличие специальных символов
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+          return "Пароль должен содержать не менее одного специального символа";
+        }
+      
+        // Проверяем наличие заглавных букв
+        if (!/[A-Z]/.test(password)) {
+          return "Пароль должен содержать не менее одной заглавной буквы";
+        }
+      
+        // Проверяем наличие английских букв
+        if (!/[a-zA-Z]/.test(password)) {
+          return "Пароль должен содержать только английские буквы";
+        }
+      
+        // Если все проверки пройдены, пароль считается валидным
+        return null;
       }
-      // Остальная валидация пароля может быть добавлена здесь
 
       if (emailExists) {
         alert("This email is already registered.");
@@ -352,13 +374,6 @@ document.addEventListener("DOMContentLoaded", function() {
       nicknameInput.value = nickname;
   });
 
-  passwordChoiceSelect.addEventListener("change", function() {
-      if (passwordChoiceSelect.value === "auto") {
-          manualPasswordFields.style.display = "none";
-      } else {
-          manualPasswordFields.style.display = "block";
-      }
-  });
 });
 
 function generateNickname(firstName, secondName) {
