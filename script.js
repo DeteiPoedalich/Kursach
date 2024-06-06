@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       
         // Проверяем наличие специальных символов
-        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        if (!/[!@#$%^&*(),.?":{}|<>_]/.test(password)) {
           return "Пароль должен содержать не менее одного специального символа";
         }
       
@@ -504,7 +504,7 @@ const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 const currentSlide = document.getElementById('current-slide');
 const totalSlides = document.getElementById('total-slide');
-var lang1=localStorage.getItem("language")
+
 
 let slidesData; 
 let currentIndex1 = 0;
@@ -536,6 +536,7 @@ fetch('slides.json')
     }
 
     function showSlide(index) {
+      var lang1=localStorage.getItem("language")
       if(index==5){
         applyTranslations(lang1);
         slide = slidesData[5];
@@ -566,6 +567,7 @@ fetch('slides.json')
     }
 
     function updatePagination() {
+      var lang1=localStorage.getItem("language")
       applyTranslations(lang1);
       currentSlide.textContent = currentIndex1 + 1;
     }
