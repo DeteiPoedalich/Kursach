@@ -709,6 +709,9 @@ body.dark .Main_container3{
     margin:5.95% 0 0 0;
     flex-direction: column;
 }
+.Main_container4.nolog{
+    display: none;
+}
 .Main_container4_top_text{
     font-family: "Roboto";
     text-align: center;
@@ -767,6 +770,9 @@ body.dark .Main_container4_rectangle{
     margin: 9% 0 0 0;
     display: flex;
     gap:0.55%;
+}
+.Main_container_5.nolog{
+    display: none;
 }
 .Main_container5_right{
     background-color: #E9672B;
@@ -958,6 +964,9 @@ body.dark .Main_container7 img{
     align-items: center;
     text-align: center;
     width: 23%;
+}
+.Main_container8.nolog{
+    display: none;
 }
 .Main_container8 p{
     font-family: "Roboto";

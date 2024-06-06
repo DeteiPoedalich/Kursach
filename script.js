@@ -403,6 +403,9 @@ document.addEventListener("DOMContentLoaded", function() {
           GetStartBut.classList.toggle("user");
           Main_container2_rectangles.classList.remove("nolog");
           logoutbut.classList.remove("nolog");
+          Main_cont_8.classList.remove("nolog");
+          Main_continer_4.classList.remove("nolog");
+          Main_container_5.classList.remove("nolog");
           // Сохраняем данные пользователя в localStorage
           localStorage.setItem("loggedInUser", JSON.stringify(user));
           // Здесь можно добавить дополнительные действия после успешного входа
@@ -429,6 +432,9 @@ document.addEventListener("DOMContentLoaded", function() {
 var GetStartBut=document.getElementById("Main_1_button");
 var logoutbut=document.getElementById("Log_out");
 var viewuserbut=document.getElementById("view_users");
+var Main_cont_8=document.getElementById("Main_container8");
+var Main_continer_4=document.getElementById("Main_continer_4");
+var Main_container_5=document.getElementById("Main_container_5");
 var Main_container2_rectangles=document.getElementById("Main_container2_rectangles");
 if(localStorage.getItem("loggedInUser"))
   {
@@ -437,11 +443,17 @@ if(localStorage.getItem("loggedInUser"))
     Acc_Name.id="Acc_Name";
     Main_container2_rectangles.classList.remove("nolog");
     logoutbut.classList.remove("nolog");
+    Main_cont_8.classList.remove("nolog");
+    Main_continer_4.classList.remove("nolog");
+    Main_container_5.classList.remove("nolog");
   }
   else{
     GetStartBut.classList.remove("user");
     Main_container2_rectangles.classList.add("nolog");
     logoutbut.classList.add("nolog");
+    Main_cont_8.classList.add("nolog");
+    Main_continer_4.classList.add("nolog");
+    Main_container_5.classList.add("nolog");
   }
   
   if (localStorage.getItem("Acc_Name") === "Admin"){
@@ -465,6 +477,9 @@ if(localStorage.getItem("loggedInUser"))
       Main_container2_rectangles.classList.add("nolog");
       logoutbut.classList.add("nolog");
       viewuserbut.classList.add("notAdmin");
+      Main_cont_8.classList.add("nolog");
+      Main_continer_4.classList.add("nolog");
+      Main_container_5.classList.add("nolog");
   });
 
 
