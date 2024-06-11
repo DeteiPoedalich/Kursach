@@ -955,6 +955,14 @@
 .Main_container1_img{
         display: none;
     }
+    .NEWSLETTER p{
+        font-family: "Roboto";
+        font-size:85%;
+        border-bottom: 2px solid black;
+        padding-bottom: 15.5%;
+        width: 75.5%;
+    }
+    
 }
 @media (max-width: 370px) {
     
